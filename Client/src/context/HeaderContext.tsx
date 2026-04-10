@@ -1,8 +1,14 @@
-import { createContext, useContext, useState, FC, ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useState,
+  type FC,
+  type ReactNode,
+} from "react";
 
 type HeaderContextType = {
   isOpen: boolean;
-  toggleHeader: () => void;
+  toggleUserMenu: () => void;
 };
 
 const HeaderContext = createContext<HeaderContextType | undefined>(undefined);
@@ -25,7 +31,7 @@ export const HeaderProvider: FC<{ children: ReactNode }> = ({ children }) => {
   };
 
   return (
-    <HeaderContext.Provider value={{ isOpen, toggleHeader: toggleUserMenu }}>
+    <HeaderContext.Provider value={{ isOpen, toggleUserMenu }}>
       {children}
     </HeaderContext.Provider>
   );

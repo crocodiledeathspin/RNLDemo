@@ -1,25 +1,19 @@
-import { Outlet } from "react-router-dom";
 import AppHeader from "./AppHeader";
 import AppSidebar from "./AppSidebar";
-
-const LayoutContent = () => {
-  return (
-    <>
-      <AppSidebar />
-      <AppHeader />
-      <main className="pt-16 sm:ml-64">
-        <div className="p-4">
-          <Outlet />
-        </div>
-      </main>
-    </>
-  );
-};
+import { Outlet } from "react-router-dom";
 
 const AppLayout = () => {
   return (
     <>
-      <LayoutContent />
+      <div>
+        <AppSidebar />
+      </div>
+      <div>
+        <AppHeader />
+      </div>
+      <div className="p-20 -ml-14 sm:ml-52">
+        <Outlet />
+      </div>
     </>
   );
 };
